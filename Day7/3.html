@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <span id="y"></span><span>年</span><span id="m"></span><span>月</span><span id="d"></span><span>日</span>
+  <span>星期</span><span id="w"></span>
+</body>
+<script>
+  window.onload = function () {
+    setInterval("timeShow()", 1000);
+  };
+
+  function timeShow() {
+    let date = new Date();
+    document.getElementById("y").textContent = date.getFullYear();
+    document.getElementById("m").textContent = date.getMonth();
+    document.getElementById("d").textContent = date.getDate();
+    let a = ['日', '一', '二', '三', '四', '五', '六'];
+    document.getElementById("w").textContent = a[date.getDay()];
+  }
+</script>
+
+</html>

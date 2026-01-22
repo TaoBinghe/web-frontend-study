@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <form>
+    <div>
+      姓名：<input type="text" id="name">
+    </div>
+    <div>身份证：<input type="text" id="id"></div>
+    <div>年龄：<input type="text" id="age"></div>
+    <div>性别: 男 <input type="radio" name="gender" id="male" value="male"> 女 <input type="radio" name="gender" id="female"
+        value="female"></div>
+    <div>电话：<input type="text" id="phone"></div>
+    <button id="btn" type="button">获取值</button>
+  </form>
+</body>
+<script src="./jquery-3.6.4.min.js"></script>
+<script>
+  $(function () {
+    $("#btn").click(function () {
+      $.ajax(
+        {
+          url: "2.json",
+          type: "get",
+          data: {
+            name: $("#name").val(),
+            idnum: $("#id").val(),
+            age: $("#age").val(),
+            tel: $("#phone").val(),
+          },
+          dataType: "json",
+          success: function (res) {
+            let name = res.name;
+            $("#name").val(name);
+            let id = res.idnum;
+            $("#id").val(id);
+            let age = res.age;
+            $("#age").val(age);
+            let phone = res.tel;
+            $("#phone").val(phone);
+            if (parseInt([id.length - 2]) % 2 == 0) {
+              $("#female").prop("checked", true);
+            } else {
+              $("#male").prop("checked", true);
+            }
+          },
+          error: function () {
+            console.log("系统异常");
+          }
+        }
+      )
+    }
+    )
+  })
+</script>
+
+</html>

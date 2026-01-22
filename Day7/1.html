@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  input {
+    width: 30px;
+    height: 20px;
+  }
+
+  button {
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+  }
+</style>
+
+<body>
+  <input type="text" value="0">
+  <input type="text" value="0">
+  <input type="text" value="0">
+  <button onclick="randomNum(this)">开始</button>
+</body>
+<script>
+  let e;
+  function randomNum(obj) {
+    if (obj.textContent === "开始") {
+      obj.textContent = "停止";
+      e = setInterval("rand('input')", 200);
+    } else {
+      obj.textContent = "开始";
+      clearInterval(e);
+    }
+  }
+
+  function rand(input) {
+    let inputs = document.getElementsByTagName(input);
+    for (inp of inputs) {
+      let r = Math.floor(Math.random() * 10);
+      inp.value = r;
+    }
+  }
+</script>
+
+</html>

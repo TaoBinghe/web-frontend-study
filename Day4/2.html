@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .title {
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 40px;
+    background-color: aqua;
+  }
+
+  fieldset {
+    width: 300px;
+    background-color: aqua;
+    color: blue;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+  div {
+    color: black;
+  }
+
+  .a {
+    background-color: greenyellow;
+  }
+
+  .b {
+    background-color: orange;
+  }
+</style>
+
+<body>
+  <div class="title">
+    会员注册
+  </div>
+  <br>
+  <form>
+    <fieldset>
+      <legend>会员信息</legend>
+      <div>
+        会员类型*
+        <input type="radio">个人会员
+        <input type="radio">企业会员
+      </div>
+      <div>
+        会员姓名*
+        <input type="text" placeholder="请填写姓名">
+      </div>
+      <div>
+        登录密码*
+        <input type="password" placeholder="请填写6-12位密码" minlength="6" maxlength="12">
+      </div>
+      <div>
+        会员年龄&nbsp;&nbsp;
+        <input type="text" placeholder="请填写年龄">
+      </div>
+      <div>
+        出生日期&nbsp;&nbsp;
+        <input type="date">
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>联系方式</legend>
+      <div>
+        所在地区*
+        <input type="text" placeholder="请选择所在地区">
+      </div>
+      <div>
+        会员邮箱&nbsp;&nbsp;
+        <input type="email" placeholder="请填写email">
+      </div>
+      <div>
+        手机号码&nbsp;&nbsp;
+        <input type="tel" placeholder="请填写tel">
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>公司信息</legend>
+      <div>
+        公司名称*
+        <input type="text" placeholder="请填写公司名称">
+      </div>
+      <div>
+        公司类型&nbsp;&nbsp;
+        <input type="checkbox">科技
+        <input type="checkbox">教育
+        <input type="checkbox">医疗
+        <input type="submit" value="注册" class="a">
+        <input type="reset" value="重置" class="b">
+      </div>
+    </fieldset>
+  </form>
+
+</body>
+
+</html>
